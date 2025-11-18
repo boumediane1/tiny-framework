@@ -11,5 +11,7 @@ function dd($value)
 
 function urlIs(string $value): bool
 {
-    return $_SERVER['REQUEST_URI'] === $value;
+    $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+    return $uri === $value;
 }
+
