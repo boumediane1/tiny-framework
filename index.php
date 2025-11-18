@@ -1,15 +1,11 @@
 <?php
 
 require 'functions.php';
-//require 'router.php';
+require 'Database.php';
 
-$pdo = new PDO('mysql:host=localhost;dbname=laracasts', 'root');
+$db = new Database('localhost', 3306, 'laracasts', 'root');
+$posts = $db->query('select * from posts')->fetchAll(PDO::FETCH_ASSOC);
 
-$statement = $pdo->prepare('select * from posts');
-$statement->execute();
-
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-foreach($posts as $post) {
+foreach ($posts as $post) {
     echo "<li>{$post['title']}</li>";
 }
