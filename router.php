@@ -27,4 +27,3 @@ function abort(int $code = 404): void
 }
 
 routeToController($uri, $routes);
-
