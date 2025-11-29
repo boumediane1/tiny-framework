@@ -3,7 +3,7 @@
 function dd($value)
 {
     echo '<pre>';
-        var_dump($value);
+    var_dump($value);
     echo '</pre>';
 
     die();
@@ -13,5 +13,12 @@ function urlIs(string $value): bool
 {
     $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
     return $uri === $value;
+}
+
+function authorize(bool $condition, $status = Response::FORBIDDEN): void
+{
+    if (!$condition) {
+        abort($status);
+    }
 }
 
