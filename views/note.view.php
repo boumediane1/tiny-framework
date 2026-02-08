@@ -7,7 +7,7 @@
         <a href="/notes" class="text-blue-500 underline">Go back...</a>
     </p>
 
-    <p><?= $note['body'] ?></p>
+    <p><?= htmlspecialchars($note['body']) ?></p>
 </main>
 
 <?php require 'partials/footer.php'; ?>
