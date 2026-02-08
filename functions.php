@@ -21,4 +21,3 @@ function authorize(bool $condition, $status = Response::FORBIDDEN): void
         abort($status);
     }
 }
-
