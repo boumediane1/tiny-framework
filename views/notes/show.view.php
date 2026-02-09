@@ -8,6 +8,11 @@
     </p>
 
     <p><?= htmlspecialchars($note['body']) ?></p>
+
+    <form method="post" class="mt-6">
+        <input type="hidden" name="id" value="<?= $note['id'] ?>" />
+        <button class="text-sm text-red-500" type="submit">Delete</button>
+    </form>
 </main>
 
 <?php require base_path('views/partials/footer.php'); ?>
