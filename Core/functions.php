@@ -38,9 +38,9 @@ function base_path(string $path): string
     return BASE_PATH . $path;
 }
 
-function view(string $path, array $attributes = []): void
+function view(string $path, array $attributes = [])
 {
     extract($attributes);
 
-    require base_path('views/' . $path);
+    return require base_path('views/' . $path);
 }
